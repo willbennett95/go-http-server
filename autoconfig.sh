@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo yum -y install go
 useradd testuser
 su - testuser
 git clone https://github.com/willbennett95/go-http-server
