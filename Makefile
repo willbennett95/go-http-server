@@ -7,10 +7,10 @@ SERVICE_SCRIPT = /etc/systemd/system/${NAME}.service
 install:
 	@go build -o build/go-http-server ./http-server.go
 	@cp -r ./static ./build
-	@sudo cp ${NAME}.service ${SERVICE_SCRIPT}
-	@sudo mkdir -p ${INSTALL_LOCATION}
-	@sudo cp -r ./build ${INSTALL_LOCATION}
-	@sudo systemctl daemon-reload
+	@cp ${NAME}.service ${SERVICE_SCRIPT}
+	@mkdir -p ${INSTALL_LOCATION}
+	@cp -r ./build ${INSTALL_LOCATION}
+	@systemctl daemon-reload
 
 uninstall:
 	@rm -rf ${INSTALL_LOCATION}
